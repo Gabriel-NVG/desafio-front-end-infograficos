@@ -1,0 +1,56 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Georgia;
+    font-size: 18px;
+}
+
+.container {
+    margin: 0 207;
+}
+
+a{
+    color: black;
+}
+
+/* BEGIN - Navbar */
+#navbar {
+    height: 151px;
+    border-bottom: solid #b22d30 4px;
+}
+
+#navbarMenu {
+    font-size: 24px;
+    margin: 0;
+    padding-top: 100px;
+    list-style-type: none;
+    overflow: hidden;
+    float: right;
+}
+
+#navbarMenu > li {
+    float: left;
+    padding-left: 30px;
+}
+
+#navbarMenu > li > a {
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+}
+
+/* BEGIN - Submenu */
+#navbarSubmenu {
+    position: absolute;
+}
+
+#navbarSubmenu > ul > li {
+    display: block;
+}
+/* END - Submenu */
+
+.active {
+    font-weight: bold;
+    color: #b22d30;
+}
+/* END - Navbar */

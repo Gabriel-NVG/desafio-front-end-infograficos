@@ -1,26 +1,30 @@
+<!DOCTYPE html>
 <html lang="pt-br">
     <head>
         <meta charset="utf-8">
         <meta name="description" content="Descrição da Minuto News.">
         <meta name="author" content="Minuto News">
         <meta name="keywords" content="minuto news, notícias">
-        <meta name="theme-color" content="#000">
-        <link rel="shortcut icon" href="assets/favicon.ico">
+        <meta name="theme-color" content="#000000">
+        <link rel="shortcut icon" href="assets/img/favicon.ico">
         <title>Minuto News</title>
         <!-- CSS -->
         <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-        <!-- Font -->
-        <link rel="stylesheet" type="text/css" href="assets/img/favicon.ico">
     </head>
     <body>
         <div id="navbar">
-            <div class="container">
+            <div class="innerContainer">
+                <div id="imgLogo">
+                    <a href="#">
+                        <img src="assets/img/logo-minuto.svg" alt="Minuto News" width="350" height="80">
+                    </a>
+                </div>
                 <ul id="navbarMenu">
-                    <li><a class="active" href="#inicio">Início</a></li>
-                    <li><a href="#brasil">Brasil<span style="font-size: 17px;">&#x25BC;</span></a></li>
-                    <li><a href="#mundo">Mundo</a></li>
-                    <li><a href="#blogs">Blogs</a></li>
-                    <li><a href="#assine">Assine</a></li>
+                    <li><a class="active" href="#">Início</a></li>
+                    <li><a href="#">Brasil<span style="font-size: 17px;">&#x25BC;</span></a></li>
+                    <li><a href="#">Mundo</a></li>
+                    <li><a href="#">Blogs</a></li>
+                    <li><a href="#">Assine</a></li>
                 </ul>
                 <!-- BEGIN - Hidden Submenu -->
                 <div style="display: none;" id="navbarSubmenu">
@@ -36,18 +40,107 @@
             </div>
         </div>
 
-        <section>
-            <div class="container">
+        <section id="sectionSlide">
+            <div>
+                SLIDE
+            </div>
+        </section>
 
+        <section id="sectionEditoriais">
+            <div class="innerContainer">
+                EDITORIAIS
+            </div>
+        </section>
+
+        <aside>
+            <div class="outerContainer">
+                <hr>
+            </div>
+        </aside>
+
+        <section id="sectionGrafico">
+            <div class="innerContainer">
+                GRAFICO
+            </div>
+        </section>
+
+        <aside>
+            <div class="outerContainer">
+                <hr>
+            </div>
+        </aside>
+
+        <section id="sectionMapa">
+            <div id="googleMap"></div>
+        </section>
+
+        <section id="sectionContato">
+            <div>
+                <div id="divContatoLeft">
+                    <div id="contentDivContatoLeft">
+                        <div class="textoTitulo">ENTRE EM CONTATO</div>
+                        <br><br><br>
+                        <div class="textoSubtitulo">Onde nos achar</div>
+                        <p>
+                            <span>Rua dos Alfeneiros, número 4</span>
+                            <br>
+                            <span>00-91102</span>
+                            <br>
+                            <span>Little Whitning</span>
+                            <br>
+                            <span>Londres/Inglaterra</span>
+                        </p>
+                        <br>
+                        <span>(21) 4004 - 1234</span>
+                        <br>
+                        <span>(21) 4004 - 4321</span>
+                        <br><br><br>
+                        <span>contato@minutonews.com.br</span>
+                        <br><br><br>
+                        <span>Aberto de segunda a sexta das 09h as 19h</span>
+                    </div>
+                </div>
+                <div id="divContatoRight">
+                    <div id="contentDivContatoRight">
+                        <div class="textoTitulo">&nbsp;</div>
+                        <br><br><br>
+                        <div class="textoSubtitulo">Mande uma mensagem</div>
+                        <br>
+                        <form>
+                            <div class="divInputGroup">
+                                <label for="nome">Seu nome:</label>
+                                <br>
+                                <input type="text" id="nome" name="nome">
+                            </div>
+                            <div class="divInputGroup">
+                                <label for="email">Email:</label>
+                                <br>
+                                <input type="email" id="email" name="email">
+                            </div>
+                            <div class="divInputGroup">
+                                <label for="mensagem">Mensagem:</label>
+                                <br>
+                                <textarea id="mensagem" name="mensagem"></textarea>
+                            </div>
+                            <div class="divInputGroup">
+                                <input id="btSubmit" type="submit" value="Enviar">
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
         </section>
 
         <footer>
-
+            <div class="outerContainer">
+                <div id="textoFooter"><span id="copyrightSymbolFooter">&#169;</span> Entrevista | Front-End</div>
+            </div>
         </footer>
 
         <!-- JS -->
         <script type="text/javascript" src="assets/js/jquery-1.12.4.min.js"></script>
+        <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js"></script>
+        <script type="text/javascript" src="assets/js/googleMapsCustom.js"></script>
         <script type="text/javascript" src="assets/js/script.js"></script>
     </body>
 </html>

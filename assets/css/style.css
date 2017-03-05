@@ -1,16 +1,38 @@
 body {
+    width: 1500px;
     margin: 0;
     padding: 0;
     font-family: Georgia;
     font-size: 18px;
 }
 
-.container {
-    margin: 0 207;
+.innerContainer {
+    margin: 0 207px;
 }
 
-a{
+.outerContainer {
+    margin: 0 110px;
+}
+
+a {
     color: black;
+}
+
+hr {
+    border-top: dashed 2px #9b9da3;
+    margin: 0;
+}
+
+.textoTitulo {
+    font-family: Georgia;
+    font-size: 34px;
+    font-weight: bold;
+}
+
+.textoSubtitulo {
+    font-family: Georgia;
+    font-size: 27.98px;
+    font-weight: bold;
 }
 
 /* BEGIN - Navbar */
@@ -39,6 +61,11 @@ a{
     text-decoration: none;
 }
 
+#imgLogo {
+    padding-top: 52px;
+    float: left;
+}
+
 /* BEGIN - Submenu */
 #navbarSubmenu {
     position: absolute;
@@ -54,3 +81,120 @@ a{
     color: #b22d30;
 }
 /* END - Navbar */
+
+/* BEGIN - Section Slide */
+#sectionSlide {
+    height: 500px;
+    /* REMOVER ESTA LINHA*/ background-color: lightgray;
+}
+/* END - Section Slide */
+
+/* BEGIN - Section Editoriais */
+#sectionEditoriais {
+    margin-top: 119px;
+    margin-bottom: 103px;
+    /* REMOVER ESTA LINHA*/ height: 500px;
+    /* REMOVER ESTA LINHA*/ background-color: gray;
+}
+/* END - Section Editoriais */
+
+/* BEGIN - Section Grafico */
+#sectionGrafico {
+    height: 385px;
+    margin-top: 120px;
+    margin-bottom: 117px;
+    /* REMOVER ESTA LINHA*/ background-color: darkblue;
+}
+/* END - Section Grafico */
+
+/* BEGIN - Section Mapa */
+#sectionMapa {
+    margin-top: 112px;
+}
+
+#googleMap {
+    width: 100%;
+    height: 448px;
+}
+/* END - Section Mapa */
+
+/* BEGIN - Section Contato */
+#sectionContato {
+    height: 765px;
+    font-family: verdana;
+    font-size: 17.99px.
+}
+
+#divContatoLeft, #divContatoRight {
+    padding-top: 136px;
+    width: 50%;
+    height: 629px;
+}
+
+#divContatoLeft {
+    float: left;
+}
+
+#divContatoRight {
+    float: right;
+    background-color: #b22d31;
+}
+
+#contentDivContatoLeft {
+    padding-left: 207px;
+}
+
+#contentDivContatoRight {
+    padding-left: 35px;
+    color: #ffffff;
+}
+
+.divInputGroup {
+    padding-top: 10px;
+}
+
+input, textarea {
+    border: none;
+    margin-top: 5px;
+    width: 505px;
+}
+
+input {
+    height: 35px;
+}
+
+textarea {
+    height: 110px;
+    resize: none;
+}
+
+#btSubmit {
+    width: 108px;
+    height: 46px;
+    margin-top: 13px;
+    margin-left: 401px;
+    font-family: verdana;
+    font-weight: bold;
+    font-size: 19.7px;
+    color: #ffffff;
+    background-color: #000000;
+}
+/* END - Section Contato */
+
+/* BEGIN - Footer */
+footer {
+    height: 72px;
+    background-color: #000000;
+    font-family: Verdana;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+#textoFooter {
+    padding-top: 25px;
+}
+
+#copyrightSymbolFooter {
+    font-weight: normal;
+}
+/* END - Footer */

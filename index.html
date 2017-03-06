@@ -21,22 +21,20 @@
                 </div>
                 <ul id="navbarMenu">
                     <li><a class="active" href="#">Início</a></li>
-                    <li><a href="#">Brasil<span style="font-size: 17px;">&#x25BC;</span></a></li>
+                    <li>
+                        <a href="javascript:void(0)">Brasil<span style="font-size: 17px;">&#x25BC;</span></a>
+                        <ul class="navbarSubmenu">
+                            <li><a href="#">Submenu 01</a></li>
+                            <li><a href="#">Submenu 02</a></li>
+                            <li><a href="#">Submenu 03</a></li>
+                            <li><a href="#">Submenu 04</a></li>
+                            <li><a href="#">Submenu 05</a></li>
+                        </ul>
+                    </li>
                     <li><a href="#">Mundo</a></li>
                     <li><a href="#">Blogs</a></li>
                     <li><a href="#">Assine</a></li>
                 </ul>
-                <!-- BEGIN - Hidden Submenu -->
-                <div style="display: none;" id="navbarSubmenu">
-                    <ul>
-                        <li><a href="#submenu01">Submenu 01</a></li>
-                        <li><a href="#submenu02">Submenu 02</a></li>
-                        <li><a href="#submenu03">Submenu 03</a></li>
-                        <li><a href="#submenu04">Submenu 04</a></li>
-                        <li><a href="#submenu05">Submenu 05</a></li>
-                    </ul>
-                </div>
-                <!-- END - Hidden Submenu -->
             </div>
         </div>
 
@@ -106,21 +104,21 @@
                         <br><br><br>
                         <div class="textoSubtitulo">Mande uma mensagem</div>
                         <br>
-                        <form>
+                        <form method="post" action="index.html">
                             <div class="divInputGroup">
                                 <label for="nome">Seu nome:</label>
                                 <br>
-                                <input type="text" id="nome" name="nome">
+                                <input type="text" id="nome" name="nome" required>
                             </div>
                             <div class="divInputGroup">
                                 <label for="email">Email:</label>
                                 <br>
-                                <input type="email" id="email" name="email">
+                                <input type="email" id="email" name="email" required>
                             </div>
                             <div class="divInputGroup">
                                 <label for="mensagem">Mensagem:</label>
                                 <br>
-                                <textarea id="mensagem" name="mensagem"></textarea>
+                                <textarea id="mensagem" name="mensagem" required></textarea>
                             </div>
                             <div class="divInputGroup">
                                 <input id="btSubmit" type="submit" value="Enviar">

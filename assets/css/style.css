@@ -1,6 +1,6 @@
 body {
     width: 1500px;
-    margin: 0;
+    margin: auto;
     padding: 0;
     font-family: Georgia;
     font-size: 18px;
@@ -55,7 +55,7 @@ hr {
     padding-left: 30px;
 }
 
-#navbarMenu > li > a {
+#navbarMenu li > a {
     display: inline-block;
     text-align: center;
     text-decoration: none;
@@ -67,12 +67,26 @@ hr {
 }
 
 /* BEGIN - Submenu */
-#navbarSubmenu {
+.navbarSubmenu {
+    display: none;
+    width: 220px;
     position: absolute;
+    padding-top: 16px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-bottom: 9px;
+    background-color: #fff;
+    border-bottom: 4px solid #b22d30;
+    font-size: 18px;
 }
 
-#navbarSubmenu > ul > li {
-    display: block;
+.navbarSubmenu > li {
+    list-style: none;
+    padding-left: 18px;
+}
+
+.navbarSubmenu > li > a:hover {
+    font-weight: bold;
 }
 /* END - Submenu */
 
@@ -146,7 +160,7 @@ hr {
 
 #contentDivContatoRight {
     padding-left: 35px;
-    color: #ffffff;
+    color: #fff;
 }
 
 .divInputGroup {
@@ -176,18 +190,19 @@ textarea {
     font-family: verdana;
     font-weight: bold;
     font-size: 19.7px;
-    color: #ffffff;
-    background-color: #000000;
+    color: #fff;
+    background-color: #000;
+    cursor: pointer;
 }
 /* END - Section Contato */
 
 /* BEGIN - Footer */
 footer {
     height: 72px;
-    background-color: #000000;
+    background-color: #000;
     font-family: Verdana;
     font-weight: bold;
-    color: #ffffff;
+    color: #fff;
 }
 
 #textoFooter {

@@ -173,6 +173,7 @@ hr {
 
 #contentDivGraficoRight {
     width: 470px; /* 235*2 */
+    padding-top: 22px;
     padding-left: 35px;
 }
 

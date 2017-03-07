@@ -40,7 +40,20 @@
 
         <section id="sectionSlide">
             <div>
-                SLIDE
+                <div id="btSlideArrowLeft" class="btSlideArrow">
+                    <img src="assets/img/slideLeftArrow.png">
+                </div>
+                <div id="btSlideArrowRight" class="btSlideArrow">
+                    <img src="assets/img/slideRightArrow.png">
+                </div>
+                <div id="divSlidePageButtons">
+                    <div class="btSlidePage">&nbsp;</div>
+                    <div class="btSlidePage btSlidePageActive">&nbsp;</div>
+                    <div class="btSlidePage">&nbsp;</div>
+                    <div class="btSlidePage">&nbsp;</div>
+                    <div class="btSlidePage">&nbsp;</div>
+                    <!-- Botoes de paginacao dinamicos entram aqui via JS -->
+                </div>
             </div>
         </section>
 
@@ -52,12 +65,12 @@
                         <span>Ordenar por:</span>
                         <select id="selectOrdenarEditoria">
                             <option value="1">DATA</option>
-                            <option value="2">ALFABÉTICA</option>
+                            <option value="2">ALFABETO</option>
                         </select>
                         <span id="spanTextoFiltro">Filtrar por:</span>
                         <select id="selectFiltrarEditoria">
                             <option value="">--</option>
-                            <!-- options dinamicas entram aqui via JS -->
+                            <!-- Options dinamicas entram aqui via JS -->
                         </select>
                     </span>
                 </div>

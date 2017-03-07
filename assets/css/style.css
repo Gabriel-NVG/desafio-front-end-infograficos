@@ -103,6 +103,53 @@ hr {
     height: 500px;
     /* REMOVER ESTA LINHA*/ background-color: lightgray;
 }
+
+.btSlideArrow {
+    width: 52px;
+    height: 72px;
+    margin-top: 223px;
+    background-color: #b22d30;
+    cursor: pointer;
+}
+
+#btSlideArrowLeft {
+    float: left;
+    margin-left: 84px;
+}
+
+#btSlideArrowLeft > img {
+    padding-top: 15px;
+    padding-left: 10px;
+}
+
+#btSlideArrowRight {
+    float: right;
+    margin-right: 84px;
+}
+
+#btSlideArrowRight > img {
+    padding-top: 15px;
+    padding-left: 11px;
+}
+
+#divSlidePageButtons {
+    text-align: center;
+}
+
+.btSlidePage {
+    width: 15px;
+    height: 15px;
+    background-color: #fff;
+    border: solid 3px #000;
+    display: inline-block;
+    margin: 0px 7.5px;
+    margin-top: 455px;
+    cursor: pointer;
+}
+
+.btSlidePageActive {
+    border-color: #b22d30;
+}
 /* END - Section Slide */
 
 

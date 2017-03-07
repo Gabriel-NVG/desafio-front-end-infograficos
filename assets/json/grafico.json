@@ -1,0 +1,7 @@
+[
+    {"nome": "Carnaval", "valor": 50},
+    {"nome": "Esporte", "valor": 45},
+    {"nome": "Férias", "valor": 30},
+    {"nome": "Governo", "valor": 75},
+    {"nome": "Outros", "valor": 25}
+]

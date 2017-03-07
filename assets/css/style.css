@@ -35,6 +35,7 @@ hr {
     font-weight: bold;
 }
 
+
 /* BEGIN - Navbar */
 #navbar {
     height: 151px;
@@ -96,6 +97,7 @@ hr {
 }
 /* END - Navbar */
 
+
 /* BEGIN - Section Slide */
 #sectionSlide {
     height: 500px;
@@ -103,23 +105,84 @@ hr {
 }
 /* END - Section Slide */
 
-/* BEGIN - Section Editoriais */
-#sectionEditoriais {
+
+/* BEGIN - Section Editorias */
+#sectionEditorias {
     margin-top: 119px;
     margin-bottom: 103px;
     /* REMOVER ESTA LINHA*/ height: 500px;
     /* REMOVER ESTA LINHA*/ background-color: gray;
 }
-/* END - Section Editoriais */
+
+#spanSelectsEditorias {
+    float: right;
+    font-size: 22px;
+}
+
+#spanSelectsEditorias > select {
+    margin-left: 15px;
+    font-family: verdana;
+    font-size: 18.4px;
+    color: #fff;
+    background-color: #000;
+    padding: 4.5px 4px;
+    border: none;
+    cursor: pointer;
+}
+
+#spanTextoFiltro {
+    margin-left: 15px;
+}
+
+#divConteudoDinamicoEditorias {
+    padding-top: 50px; /* ALTERAR ESTE VALOR */
+}
+/* END - Section Editorias */
+
 
 /* BEGIN - Section Grafico */
 #sectionGrafico {
     height: 385px;
     margin-top: 120px;
     margin-bottom: 117px;
-    /* REMOVER ESTA LINHA*/ background-color: darkblue;
+    font-family: verdana;
+    font-size: 17.99px;
+}
+
+#divGraficoLeft, #divGraficoRight {
+    width: 50%;
+    height: 629px;
+}
+
+#divGraficoLeft {
+    float: left;
+}
+
+#divGrafico {
+    /* REMOVER ESTA LINHA */background-color: darkgray;
+}
+
+.textoInternoGrafico {
+    font-weight: bold;
+    font-size: 18.26px;
+}
+
+#divGraficoRight {
+    float: right;
+}
+
+#contentDivGraficoRight {
+    width: 470px; /* 235*2 */
+    padding-left: 35px;
+}
+
+#textoGraficoRight {
+    text-align: justify;
+    column-count: 2;
+    column-gap: 36px;
 }
 /* END - Section Grafico */
+
 
 /* BEGIN - Section Mapa */
 #sectionMapa {
@@ -132,11 +195,12 @@ hr {
 }
 /* END - Section Mapa */
 
+
 /* BEGIN - Section Contato */
 #sectionContato {
     height: 765px;
     font-family: verdana;
-    font-size: 17.99px.
+    font-size: 17.99px;
 }
 
 #divContatoLeft, #divContatoRight {
@@ -195,6 +259,7 @@ textarea {
     cursor: pointer;
 }
 /* END - Section Contato */
+
 
 /* BEGIN - Footer */
 footer {

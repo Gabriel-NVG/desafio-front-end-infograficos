@@ -44,9 +44,26 @@
             </div>
         </section>
 
-        <section id="sectionEditoriais">
+        <section id="sectionEditorias">
             <div class="innerContainer">
-                EDITORIAIS
+                <div>
+                    <span class="textoTitulo">EDITORIAS</span>
+                    <span id="spanSelectsEditorias">
+                        <span>Ordenar por:</span>
+                        <select id="selectOrdenarEditoria">
+                            <option value="1">DATA</option>
+                            <option value="2">ALFABÉTICA</option>
+                        </select>
+                        <span id="spanTextoFiltro">Filtrar por:</span>
+                        <select id="selectFiltrarEditoria">
+                            <option value="0">--</option>
+                            <!-- <option value="1">EDITORIA</option> -->
+                        </select>
+                    </span>
+                </div>
+                <div id="divConteudoDinamicoEditorias">
+                    CONTEUDO DINAMICO
+                </div>
             </div>
         </section>
 
@@ -58,7 +75,35 @@
 
         <section id="sectionGrafico">
             <div class="innerContainer">
-                GRAFICO
+                <div id="divGraficoLeft">
+                    <div id="contentDivGraficoLeft">
+                        <div class="textoTitulo" style="white-space:nowrap;">EDITORIAS MAIS ACESSADAS</div>
+                        <br><br>
+                        <div id="divGrafico">GRAFICO</div>
+                    </div>
+                </div>
+                <div id="divGraficoRight">
+                    <div id="contentDivGraficoRight">
+                        <div class="textoTitulo">&nbsp;</div>
+                        <br><br><br>
+                        <div class="textoSubtitulo">Título aqui</div>
+                        <div id="textoGraficoRight">
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                                nisi ut aliquip ex ea commodo consequat. Duis
+                            </p>
+                            <span>&nbsp;</span>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                                nisi ut aliquip ex ea commodo consequat. Duis
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 

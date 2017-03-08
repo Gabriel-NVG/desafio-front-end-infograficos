@@ -47,11 +47,6 @@
                     <img src="assets/img/slideRightArrow.png">
                 </div>
                 <div id="divSlidePageButtons">
-                    <div class="btSlidePage">&nbsp;</div>
-                    <div class="btSlidePage btSlidePageActive">&nbsp;</div>
-                    <div class="btSlidePage">&nbsp;</div>
-                    <div class="btSlidePage">&nbsp;</div>
-                    <div class="btSlidePage">&nbsp;</div>
                     <!-- Botoes de paginacao dinamicos entram aqui via JS -->
                 </div>
             </div>
@@ -65,7 +60,7 @@
                         <span>Ordenar por:</span>
                         <select id="selectOrdenarEditoria">
                             <option value="1">DATA</option>
-                            <option value="2">ALFABETO</option>
+                            <option value="2">ORDEM ALFABÉTICA</option>
                         </select>
                         <span id="spanTextoFiltro">Filtrar por:</span>
                         <select id="selectFiltrarEditoria">
@@ -75,7 +70,14 @@
                     </span>
                 </div>
                 <div id="divConteudoDinamicoEditorias">
-                    CONTEUDO DINAMICO
+                    <div class="editoria">
+                        <span class="editoriaData">20/10/2016</span>
+                        <span class="editoriaCategoria">Governo</span>
+                        <img src="Arquivos/Imagens/Notícias/1.jpg" alt="Votação encerrada">
+                        <span>Votação encerrada</span>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vestibulum viverra diam ut venenatis.</p>
+                        <p><a href="#">Saiba mais</a></p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -137,23 +139,25 @@
                         <div class="textoTitulo">ENTRE EM CONTATO</div>
                         <br><br><br>
                         <div class="textoSubtitulo">Onde nos achar</div>
-                        <p>
-                            <span>Rua dos Alfeneiros, número 4</span>
+                        <address>
+                            <p>
+                                <span>Rua dos Alfeneiros, número 4</span>
+                                <br>
+                                <span>00-91102</span>
+                                <br>
+                                <span>Little Whitning</span>
+                                <br>
+                                <span>Londres/Inglaterra</span>
+                            </p>
                             <br>
-                            <span>00-91102</span>
+                            <span>(21) 4004 - 1234</span>
                             <br>
-                            <span>Little Whitning</span>
-                            <br>
-                            <span>Londres/Inglaterra</span>
-                        </p>
-                        <br>
-                        <span>(21) 4004 - 1234</span>
-                        <br>
-                        <span>(21) 4004 - 4321</span>
-                        <br><br><br>
-                        <span>contato@minutonews.com.br</span>
-                        <br><br><br>
-                        <span>Aberto de segunda a sexta das 09h as 19h</span>
+                            <span>(21) 4004 - 4321</span>
+                            <br><br><br>
+                            <span>contato@minutonews.com.br</span>
+                            <br><br><br>
+                            <span>Aberto de segunda a sexta das 09h as 19h</span>
+                        </address>
                     </div>
                 </div>
                 <div id="divContatoRight">

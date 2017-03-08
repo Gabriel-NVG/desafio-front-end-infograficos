@@ -9,6 +9,93 @@ $(function() {
     //END - Hover do submenu da navbar
 
 
+    //BEGIN - Slide
+    var dataSlide = [
+      {
+        "nome": "Slide da homepage",
+        "imagens": [
+          "2.jpg",
+          "1.jpg",
+          "4.jpg",
+          "5.jpg",
+          "3.jpg"
+        ]
+      }
+    ]
+
+    var nomesImagens = [];
+    var posicaoArrayImagemAtual = 0;
+
+    function TrocaImagem(key) {
+        //Altera o background do slide para a imagem selecionada
+        $("#sectionSlide").animate({opacity: 0}, "fast", function() {
+            $(this).css("background-image", "url('Arquivos/Imagens/Slide/" + nomesImagens[key] + "')")
+            .animate({opacity: 1});
+        });
+        //Desmarca como ativo o botao de pagina da imagem anterior
+        $(".btSlidePageActive").removeClass("btSlidePageActive");
+        //Marca como ativo o botao de pagina da imagem selecionada
+        $('[data-img-key="' + key + '"]').addClass("btSlidePageActive");
+        //Guarda a posicao do array da imagem selecionada
+        posicaoArrayImagemAtual = key;
+    }
+
+    function ProximaImagem() {
+        //Se a primeira imagem do array estiver selecionada, entao troca para a ultima
+        if (posicaoArrayImagemAtual == 0) {
+            posicaoArrayImagemAtual = nomesImagens.length-1;
+        }
+        //Se nao for nem a primeira imagem que estiver selecionada, entao volta uma imagem no array
+        else {
+            posicaoArrayImagemAtual --;
+        }
+        TrocaImagem(posicaoArrayImagemAtual);
+    }
+
+    function ImagemAnterior() {
+        //Se a ultima imagem do array estiver selecionada, entao troca para a primeira
+        if (posicaoArrayImagemAtual == (nomesImagens.length-1)) {
+            posicaoArrayImagemAtual = 0;
+        }
+        //Se nao for nem a primeira imagem que estiver selecionada, entao avanca uma imagem no array
+        else {
+            posicaoArrayImagemAtual ++;
+        }
+        TrocaImagem(posicaoArrayImagemAtual);
+    }
+
+    //Pega os nomes (e a ordem) das imagens e adiciona um botao de selecao de pagina para cada uma
+    $.each(dataSlide, function(key, value) {
+        $.each(value.imagens, function(key, value) {
+            nomesImagens.push(value);
+            $("#divSlidePageButtons").append('<div data-img-key="' + key + '" class="btSlidePage">&nbsp;</div>');
+        });
+    });
+
+    //Adiciona a primeira imagem do json como background do slide
+    TrocaImagem(0);
+
+    //Comportamento do clique das setas do slide
+    $("#btSlideArrowLeft").click(function() {
+        ProximaImagem();
+    });
+    $("#btSlideArrowRight").click(function() {
+        ImagemAnterior();
+    });
+
+    //Comportamento do clique dos botoes de pagina
+    $(".btSlidePage").click(function() {
+        TrocaImagem($(this).data("img-key"));
+    });
+
+    //Troca automatica de imagem por tempo
+    var tempoTrocaImagem = 10; //em segundos
+    window.setInterval(function(){
+        ImagemAnterior();
+    }, tempoTrocaImagem * 1000);
+    //END - Slide
+
+
     //BEGIN - Grafico
     var dataGrafico = [
         {'nome': 'Carnaval', 'valor': 50},

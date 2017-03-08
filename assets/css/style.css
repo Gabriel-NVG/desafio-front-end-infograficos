@@ -2,7 +2,7 @@ body {
     width: 1500px;
     margin: auto;
     padding: 0;
-    font-family: Georgia;
+    font-family: "georgia";
     font-size: 18px;
 }
 
@@ -24,13 +24,13 @@ hr {
 }
 
 .textoTitulo {
-    font-family: Georgia;
+    font-family: "georgia";
     font-size: 34px;
     font-weight: bold;
 }
 
 .textoSubtitulo {
-    font-family: Georgia;
+    font-family: "georgia";
     font-size: 27.98px;
     font-weight: bold;
 }
@@ -101,7 +101,9 @@ hr {
 /* BEGIN - Section Slide */
 #sectionSlide {
     height: 500px;
-    /* REMOVER ESTA LINHA*/ background-color: lightgray;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-color: #fff;
 }
 
 .btSlideArrow {
@@ -168,7 +170,7 @@ hr {
 
 #spanSelectsEditorias > select {
     margin-left: 15px;
-    font-family: verdana;
+    font-family: "verdana";
     font-size: 18.4px;
     color: #fff;
     background-color: #000;
@@ -184,6 +186,31 @@ hr {
 #divConteudoDinamicoEditorias {
     padding-top: 50px; /* ALTERAR ESTE VALOR */
 }
+
+.editoria {
+    width: 303px;
+    float: left;
+    padding-left: 26px;
+    margin-bottom: 55px;
+    border-left: solid 4px #b22d30;
+}
+
+.editoriaData {
+    float: left;
+    font-family: "verdana";
+    font-size: 14px;
+}
+
+.editoriaCategoria {
+    float: right;
+    font-family: "verdana";
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.editoria > a {
+
+}
 /* END - Section Editorias */
 
 
@@ -192,7 +219,7 @@ hr {
     height: 385px;
     margin-top: 120px;
     margin-bottom: 117px;
-    font-family: verdana;
+    font-family: "verdana";
     font-size: 17.99px;
 }
 
@@ -247,7 +274,7 @@ hr {
 /* BEGIN - Section Contato */
 #sectionContato {
     height: 765px;
-    font-family: verdana;
+    font-family: "verdana";
     font-size: 17.99px;
 }
 
@@ -275,6 +302,10 @@ hr {
     color: #fff;
 }
 
+address {
+    font-style: normal;
+}
+
 .divInputGroup {
     padding-top: 10px;
 }
@@ -299,7 +330,7 @@ textarea {
     height: 46px;
     margin-top: 13px;
     margin-left: 401px;
-    font-family: verdana;
+    font-family: "verdana";
     font-weight: bold;
     font-size: 19.7px;
     color: #fff;
@@ -313,7 +344,7 @@ textarea {
 footer {
     height: 72px;
     background-color: #000;
-    font-family: Verdana;
+    font-family: "verdana";
     font-weight: bold;
     color: #fff;
 }

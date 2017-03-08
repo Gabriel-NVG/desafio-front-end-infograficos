@@ -16,6 +16,7 @@ body {
 
 a {
     color: black;
+    text-decoration: none;
 }
 
 hr {
@@ -47,7 +48,6 @@ hr {
     margin: 0;
     padding-top: 100px;
     list-style-type: none;
-    overflow: hidden;
     float: right;
 }
 
@@ -59,7 +59,6 @@ hr {
 #navbarMenu li > a {
     display: inline-block;
     text-align: center;
-    text-decoration: none;
 }
 
 #imgLogo {
@@ -70,15 +69,17 @@ hr {
 /* BEGIN - Submenu */
 .navbarSubmenu {
     display: none;
+    z-index: 1;
     width: 220px;
     position: absolute;
-    padding-top: 16px;
+    padding-top: 26px;
     padding-left: 0px;
     padding-right: 0px;
     padding-bottom: 9px;
     background-color: #fff;
     border-bottom: 4px solid #b22d30;
     font-size: 18px;
+    line-height: 1.33;
 }
 
 .navbarSubmenu > li {
@@ -158,9 +159,8 @@ hr {
 /* BEGIN - Section Editorias */
 #sectionEditorias {
     margin-top: 119px;
-    margin-bottom: 103px;
-    /* REMOVER ESTA LINHA*/ height: 500px;
-    /* REMOVER ESTA LINHA*/ background-color: gray;
+    margin-bottom: 48px; /* 103-55 */
+    display: inline-block;
 }
 
 #spanSelectsEditorias {
@@ -184,18 +184,23 @@ hr {
 }
 
 #divConteudoDinamicoEditorias {
-    padding-top: 50px; /* ALTERAR ESTE VALOR */
+    padding-top: 69px;
+    margin-left: 185px;
 }
 
 .editoria {
     width: 303px;
-    float: left;
+    height: 366px;
+    display: inline-block;
+    padding-top: 11px;
     padding-left: 26px;
+    margin-left: 25px;
+    margin-right: 25px;
     margin-bottom: 55px;
     border-left: solid 4px #b22d30;
 }
 
-.editoriaData {
+.editoriaDataPublicacao {
     float: left;
     font-family: "verdana";
     font-size: 14px;
@@ -203,13 +208,30 @@ hr {
 
 .editoriaCategoria {
     float: right;
+    padding-right: 25px;
+    padding-bottom: 10px;
     font-family: "verdana";
-    font-weight: bold;
     font-size: 14px;
+    font-weight: bold;
 }
 
-.editoria > a {
+.editoriaTitulo {
+    padding-top: 12px;
+}
 
+.editoriaTexto {
+    padding-top: 7px;
+    padding-bottom: 14px;
+    font-family: "verdana";
+    font-size: 17.99px;
+    color: #666666;
+}
+
+.editoriaSaibaMais {
+    padding-bottom: 0px;
+    font-family: "georgia";
+    font-size: 21.99px;
+    font-weight: bold;
 }
 /* END - Section Editorias */
 
@@ -246,7 +268,6 @@ hr {
 }
 
 #contentDivGraficoRight {
-    width: 470px; /* 235*2 */
     padding-top: 22px;
     padding-left: 35px;
 }

@@ -26,7 +26,7 @@ $(function() {
     var nomesImagens = [];
     var posicaoArrayImagemAtual = 0;
 
-    function TrocaImagem(key) {
+    function trocaImagem(key) {
         //Altera o background do slide para a imagem selecionada
         $("#sectionSlide").animate({opacity: 0}, "fast", function() {
             $(this).css("background-image", "url('assets/img/slide/" + nomesImagens[key] + "')")
@@ -40,7 +40,7 @@ $(function() {
         posicaoArrayImagemAtual = key;
     }
 
-    function ProximaImagem() {
+    function proximaImagem() {
         //Se a primeira imagem do array estiver selecionada, entao troca para a ultima
         if (posicaoArrayImagemAtual == 0) {
             posicaoArrayImagemAtual = nomesImagens.length-1;
@@ -49,10 +49,10 @@ $(function() {
         else {
             posicaoArrayImagemAtual --;
         }
-        TrocaImagem(posicaoArrayImagemAtual);
+        trocaImagem(posicaoArrayImagemAtual);
     }
 
-    function ImagemAnterior() {
+    function imagemAnterior() {
         //Se a ultima imagem do array estiver selecionada, entao troca para a primeira
         if (posicaoArrayImagemAtual == (nomesImagens.length-1)) {
             posicaoArrayImagemAtual = 0;
@@ -61,7 +61,7 @@ $(function() {
         else {
             posicaoArrayImagemAtual ++;
         }
-        TrocaImagem(posicaoArrayImagemAtual);
+        trocaImagem(posicaoArrayImagemAtual);
     }
 
     //Pega os nomes (e a ordem) das imagens e adiciona um botao de selecao de pagina para cada uma
@@ -73,25 +73,25 @@ $(function() {
     });
 
     //Adiciona a primeira imagem do json como background do slide
-    TrocaImagem(0);
+    trocaImagem(0);
 
     //Comportamento do clique das setas do slide
     $("#btSlideArrowLeft").click(function() {
-        ProximaImagem();
+        proximaImagem();
     });
     $("#btSlideArrowRight").click(function() {
-        ImagemAnterior();
+        imagemAnterior();
     });
 
     //Comportamento do clique dos botoes de pagina
     $(".btSlidePage").click(function() {
-        TrocaImagem($(this).data("img-key"));
+        trocaImagem($(this).data("img-key"));
     });
 
     //Troca automatica de imagem por tempo
     var tempoTrocaImagem = 10; //em segundos
     window.setInterval(function(){
-        ImagemAnterior();
+        imagemAnterior();
     }, tempoTrocaImagem * 1000);
     //END - Slide
 
@@ -309,18 +309,119 @@ $(function() {
     ];
 
     var nomesEditorias = [];
+    var noticias = [];
 
-    //Pega os nomes das editorias
     $.each(dataEditoria, function(key, value) {
         $.each(value.Editorias, function(key, value) {
+            var editoriaAtual = {"Editoria": value.Editoria};
+            //Pega os nomes das editorias
             nomesEditorias.push(value.Editoria);
+            //Pega as noticias
+            $.each(value.Notícias, function(key, value) {
+                //Adiciona o objeto Editoria como parte do array noticias
+                noticias.push($.extend(value, editoriaAtual));
+            });
         });
     });
+
     //Remove possiveis duplicatas e ordena as editorias alfabeticamente
     $.unique(nomesEditorias).sort();
     //Adiciona as editorias no select de filtragem
     $.each(nomesEditorias, function(key, value) {
         $("#selectFiltrarEditoria").append('<option value="' + value + '">' + value.toUpperCase() + '</option>');
+    });
+
+    //Function para listar as noticias (por ordem e filtro)
+    function listaNoticias(ordem, filtro) {
+        //Esconde a div das noticias para psoteriormente animar a aparicao das mesmas
+        $("#divConteudoDinamicoNoticias").hide();
+        //Limpa a div das noticias
+        $("#divConteudoDinamicoNoticias").html("");
+        //Filtra as noticias por editoria
+        var noticiasFiltradas = [];
+        if (filtro == "") {
+            noticiasFiltradas = noticias;
+        }
+        else {
+            $.each(noticias, function(key, value) {
+                if (value.Editoria == filtro) {
+                    noticiasFiltradas.push(value);
+                }
+            });
+        }
+        //Ordena as noticias por data de publicacao ou ordem alfabetica
+        var noticiasFiltradasOrdenadas = [];
+        if (ordem == "data") {
+            var auxNoticiasFiltradas = [];
+            $.each(noticiasFiltradas, function(key, value) {
+                var dia = value["Data de publicação"].slice(0,2);
+                var mes = value["Data de publicação"].slice(3,5);
+                var ano = value["Data de publicação"].slice(6,10);
+                var auxDataPublicacao = {"AuxOrdemData": ano + mes + dia};
+                auxNoticiasFiltradas.push($.extend(value, auxDataPublicacao));
+            });
+            noticiasFiltradasOrdenadas = auxNoticiasFiltradas.sort(function(a, b) {
+                return a.AuxOrdemData > b.AuxOrdemData ? -1 : a.AuxOrdemData < b.AuxOrdemData ? 1 : 0;
+            });
+            //alert(JSON.stringify(noticiasFiltradasOrdenadas));
+        }
+        else if (ordem == "alfabetica") {
+            noticiasFiltradasOrdenadas = noticiasFiltradas.sort(function(a, b) {
+                return a.Título < b.Título ? -1 : a.Título > b.Título ? 1 : 0;
+            });
+        }
+        else {
+            noticiasFiltradasOrdenadas = noticiasFiltradas;
+        }
+        //Adiciona as noticias no DOM
+        var eachNoticiasFinalizado = false;
+        $.each(noticiasFiltradasOrdenadas, function(key, value) {
+            $("#divConteudoDinamicoNoticias").append(
+                '<div class="noticia">' +
+                    '<span class="noticiaDataPublicacao">' +
+                        value["Data de publicação"].replace(/-/g , "/") +
+                    '</span>' +
+                    '<span class="noticiaCategoria">' + value.Editoria + '</span>' +
+                    '<img src="assets/img/noticias/' + value.Foto + '" alt="' + value.Título + '">' +
+                    '<div class="noticiaTitulo textoSubtitulo">' + value.Título + '</div>' +
+                    '<div class="noticiaTexto">' + value.Texto + '</div>' +
+                    '<div class="noticiaSaibaMais">' +
+                        '<a href="#">Saiba mais</a>' +
+                    '</div>' +
+                '</div>'
+            );
+            //Marca o termino do each e consequentemente a complitude de seu DOM
+            if (noticiasFiltradasOrdenadas.length-1 == key) {
+                eachNoticiasFinalizado = true;
+            }
+        });
+        //Pega o maior height dentre as divs de notica e insere esse mesmo height nas outras divs
+        var intervalSetNoticiasHeight = setInterval(function() {
+            var maiorHeight = 0;
+            $(".noticia").each(function() {
+                if ($(this).height() > maiorHeight) {
+                    maiorHeight = $(this).height();
+                }
+            });
+            $(".noticia").each(function() {
+                $(this).height(maiorHeight);
+            });
+            if (eachNoticiasFinalizado) {
+                clearInterval(intervalSetNoticiasHeight);
+            }
+        }, 200);
+        //Anima a aparicao das noticias
+        $("#divConteudoDinamicoNoticias").fadeIn();
+    }
+
+    //Lista todas as noticias em ordem de data de publicacao e sem filtro por editoria
+    listaNoticias("data", "");
+
+    //Lista as noticias novamente em caso de alteracao de algum select
+    $("#spanSelectsEditorias select").change(function() {
+        var valOrdem = $("#selectOrdenarEditoria").val();
+        var valFiltro = $("#selectFiltrarEditoria").val();
+        listaNoticias(valOrdem, valFiltro);
     });
 
     //END - Editoria

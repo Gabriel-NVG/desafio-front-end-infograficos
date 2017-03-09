@@ -164,7 +164,7 @@ hr {
 }
 
 #spanSelectsEditorias {
-    float: right;
+    padding-left : 170px;
     font-size: 22px;
 }
 
@@ -190,12 +190,12 @@ hr {
 
 .noticia {
     width: 303px;
-    height: 366px;
-    display: inline-block;
+    /*height: 366px;*/
+    float: left;
     padding-top: 11px;
     padding-left: 26px;
-    margin-left: 25px;
-    margin-right: 25px;
+    margin-left: 27px;
+    margin-right: 27px;
     margin-bottom: 55px;
     border-left: solid 4px #b22d30;
 }

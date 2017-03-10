@@ -1,43 +1,19 @@
-# Teste - Front-End
-O desafio é realizar o desenvolvimento front-end da homepage de um jornal fictício. O desenvolvimento deve seguir fielmente o layout disponibilizado nos arquivos abaixo (espaçamento, cores, tipografia e etc). Você não deve utilizar nenhum framework CSS (Bootstrap, Foundation e etc) neste desafio.
+## Requerimentos
+* [Node.js](https://nodejs.org/) v4.4.0 ou superior
 
-## Instruções - Topo
-* O submenu deve ser ativado no hover
-* Os links do submenu não precisam ser verídicos
+## Para executar o projeto, existem duas opções
+1. Na linha de comando, navegar até o diretório do projeto e rodar:
+    ```sh
+    $ npm start
+    ```
+    Após, acessar [http://localhost:3000/](http://localhost:3000/)
 
-## Instruções - Slide
-* Não pode ser utilizado nenhum plugin Jquery. Você pode, entretanto, usar o Jquery para manipular os elementos
-* O nome das imagens, bem como a ordem delas, encontra-se no JSON [slide](Arquivos/JSON/slide.json)
-
-## Instruções - Editorias
-* A lista de editorias deve ser gerada a partir do JSON [notícias](Arquivos/JSON/noticias.json)
-* As notícias devem ser exibidas de acordo com a editoria que está selecionada no selectbox, se nenhuma editoria estiver selecionada, todas as notícias precisam aparecer
-* Deverá ser possível ordenar as notícias por data de publicacão (da mais recente para a mais antiga) ou por ordem alfabética
-* As notícias dessa sessão devem vir do arquivo JSON chamado [notícias](Arquivos/JSON/noticias.json)
-* O conteúdo da notícia também deve ser gerado dinamicamente (data, editoria, foto, título e texto)
-
-## Instruções - Gráfico
-* Fique à vontade para usar a ferramenta que preferir para gerar o gráfico. A única exigência é que ele seja gerado dinamicamente
-
-## Instruções - Mapa
-* O mapa deve ser gerado usando a API do Google Maps
-* O pin/mark do mapa deve ser inserido via API do Google Maps
+2. Acessar [http://www.gowebit.com.br/desafio-front-end-infograficos/index.html](http://www.gowebit.com.br/desafio-front-end-infograficos/index.html)
 
 ## Observações
-* Você está livre para escolher a estrutura de diretórios da aplicação 
-* Você não deve utilizar nenhum framework CSS (Bootstrap, Foundation e etc) neste desafio.
-* Os arquivos .json não podem ser alterados
-* Dúvida? Entre em contato por email: mateus.santos@oglobo.com.br
-
-## Arquivos
-- Layout [aqui](Arquivos/Layout)
-- Imagens [aqui](Arquivos/Imagens)
-- JSONS [aqui](Arquivos/JSON)
-
-## Como submeter seu projeto
-- Fork esse projeto
-- Coloque seu projeto no repositório
-- Escreva no arquivo README.md as instruções para rodar o mesmo 
-- Envie o link do repositório para daniel.lima@oglobo.com.br e mateus.santos@oglobo.com.br, com o assunto: TESTE - Front-End O Globo
-
-## Boa sorte!
+* Os dados que populam o gráfico dinâmico, se encontram na variável "dataGrafico" dentro do "main.js".
+* Optei pelo uso do jQuery como framework JS por ter sido o único framework mencionado nas instruções (mais especificamente na parte do slide).
+* Apesar de não ser mais organizado a nível de código, preferi deixar todo o JS e o CSS em um único arquivo para cada, a fim de melhorar o desempenho do request da página.
+* Mesmo não tendo sido requisitado, tomei a liberdade de adicionar um favicon e metatags pois acredito serem sempre importantes para qualquer página na web.
+* Não fiz a width responsiva propositalmente, a fim de seguir com exatidão a width presente no PSD.
+* O uso do Node.js no projeto se limita somente a se ter um servidor para permitir os HTTP request dos json locais.

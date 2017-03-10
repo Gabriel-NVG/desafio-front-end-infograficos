@@ -79,22 +79,32 @@ $(function() {
 
     //Comportamento do clique das setas do slide
     $("#btSlideArrowLeft").click(function() {
+        //Reinicializa o timer
+        clearInterval(trocaSlideInterval);
+        trocaSlideInterval = setInterval(imagemAnterior, tempoTrocaImagem * 1000);
+        //Troca a imagem
         proximaImagem();
     });
     $("#btSlideArrowRight").click(function() {
+        //Reinicializa o timer
+        clearInterval(trocaSlideInterval);
+        trocaSlideInterval = setInterval(imagemAnterior, tempoTrocaImagem * 1000);
+        //Troca a imagem
         imagemAnterior();
     });
 
     //Comportamento do clique dos botoes de pagina
     $(".btSlidePage").click(function() {
+        //Reinicializa o timer
+        clearInterval(trocaSlideInterval);
+        trocaSlideInterval = setInterval(imagemAnterior, tempoTrocaImagem * 1000);
+        //Troca a imagem
         trocaImagem($(this).data("img-key"));
     });
 
-    //Troca automatica de imagem por tempo
+    //Timer para troca automatica de imagem
     var tempoTrocaImagem = 10; //em segundos
-    window.setInterval(function(){
-        imagemAnterior();
-    }, tempoTrocaImagem * 1000);
+    var trocaSlideInterval = setInterval(imagemAnterior, tempoTrocaImagem * 1000);
     //END - Slide
 
 
@@ -113,7 +123,7 @@ $(function() {
             console.log("noticias.json não encontrado ou leitura não permitida.");
         }
     });
-    
+
     var nomesEditorias = [];
     var noticias = [];
 
@@ -169,7 +179,6 @@ $(function() {
             noticiasFiltradasOrdenadas = auxNoticiasFiltradas.sort(function(a, b) {
                 return a.AuxOrdemData > b.AuxOrdemData ? -1 : a.AuxOrdemData < b.AuxOrdemData ? 1 : 0;
             });
-            //alert(JSON.stringify(noticiasFiltradasOrdenadas));
         }
         else if (ordem == "alfabetica") {
             noticiasFiltradasOrdenadas = noticiasFiltradas.sort(function(a, b) {
@@ -180,7 +189,6 @@ $(function() {
             noticiasFiltradasOrdenadas = noticiasFiltradas;
         }
         //Adiciona as noticias no DOM
-        var eachNoticiasFinalizado = false;
         $.each(noticiasFiltradasOrdenadas, function(key, value) {
             $("#divConteudoDinamicoNoticias").append(
                 '<div class="noticia">' +
@@ -196,13 +204,9 @@ $(function() {
                     '</div>' +
                 '</div>'
             );
-            //Marca o termino do each e consequentemente a complitude de seu DOM
-            if (noticiasFiltradasOrdenadas.length-1 == key) {
-                eachNoticiasFinalizado = true;
-            }
         });
         //Pega o maior height dentre as divs de notica e insere esse mesmo height nas outras divs
-        var intervalSetNoticiasHeight = setInterval(function() {
+        setTimeout(function() {
             var maiorHeight = 0;
             $(".noticia").each(function() {
                 if ($(this).height() > maiorHeight) {
@@ -212,10 +216,7 @@ $(function() {
             $(".noticia").each(function() {
                 $(this).height(maiorHeight);
             });
-            if (eachNoticiasFinalizado) {
-                clearInterval(intervalSetNoticiasHeight);
-            }
-        }, 200);
+        }, 500);
         //Anima a aparicao das noticias
         $("#divConteudoDinamicoNoticias").fadeIn();
     }

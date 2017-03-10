@@ -1,0 +1,23 @@
+{
+  "name": "desafio-front-end-infograficos",
+  "version": "1.0.0",
+  "description": "Desafio frontend do jornal O Globo.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Nenhum teste especificado.\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gabriel-NVG/desafio-front-end-infograficos.git"
+  },
+  "keywords": [
+    "desafio, frontend, o globo"
+  ],
+  "author": "Gabriel Gomes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Gabriel-NVG/desafio-front-end-infograficos/issues"
+  },
+  "homepage": "https://github.com/Gabriel-NVG/desafio-front-end-infograficos#readme"
+}

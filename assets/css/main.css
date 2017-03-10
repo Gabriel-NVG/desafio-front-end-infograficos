@@ -185,17 +185,17 @@ hr {
 
 #divConteudoDinamicoNoticias {
     padding-top: 69px;
-    margin-left: 185px;
+    margin-left: 170px;
 }
 
 .noticia {
-    width: 303px;
+    width: 277px;
     /*height: 366px;*/
     float: left;
     padding-top: 11px;
     padding-left: 26px;
-    margin-left: 27px;
-    margin-right: 27px;
+    margin-left: 40px;
+    margin-right: 40px;
     margin-bottom: 55px;
     border-left: solid 4px #b22d30;
 }
@@ -208,7 +208,6 @@ hr {
 
 .noticiaCategoria {
     float: right;
-    padding-right: 25px;
     padding-bottom: 10px;
     font-family: "verdana";
     font-size: 14px;
@@ -255,7 +254,11 @@ hr {
 }
 
 #divGrafico {
-    /* REMOVER ESTA LINHA */background-color: darkgray;
+    width: 500px;
+    height: 335px;
+    margin: 0 auto;
+    padding-top: 15px;
+    position: absolute;
 }
 
 .textoInternoGrafico {

@@ -8,7 +8,7 @@
     ```
     Após, acessar [http://localhost:3000/](http://localhost:3000/)
 
-2. Acessar [http://www.gowebit.com.br/desafio-front-end-infograficos/index.html](http://www.gowebit.com.br/desafio-front-end-infograficos/index.html)
+2. Acessar [https://demos.gowebit.com.br/desafio-front-end-infograficos](https://demos.gowebit.com.br/desafio-front-end-infograficos)
 
 ## Observações
 * Os dados que populam o gráfico dinâmico, se encontram na variável "dataGrafico" dentro do "main.js".
